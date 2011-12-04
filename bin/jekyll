@@ -113,6 +113,10 @@ opts = OptionParser.new do |opts|
     end
   end
 
+  opts.on("--multiviews", "Remove .html from url") do |style|
+    options['multiview'] = false
+  end
+
   opts.on("--limit_posts [MAX_POSTS]", "Limit the number of posts to publish") do |limit_posts|
     begin
       options['limit_posts'] = limit_posts.to_i

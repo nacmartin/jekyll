@@ -141,6 +141,8 @@ module Jekyll
       # sanitize url
       @url = url.split('/').reject{ |part| part =~ /^\.+$/ }.join('/')
       @url += "/" if url =~ /\/$/
+      # multiviews
+      @url = site.config['multiviews'] ? @url.sub(/\.html$/, '') : @url
       @url
     end
 
